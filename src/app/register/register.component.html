@@ -1,0 +1,154 @@
+<main>
+  <div class="img-container">
+    <video width="100%" height="100%" autoplay loop>
+      <source src="../../assets/img/jogger.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="register-section">
+    <div class="title-text">
+      <h1 class="animated infinite pulse in delay-2s">Fitla !</h1>
+    </div>
+
+    <div class="tagline">Celebrating Health</div>
+    <div class="form-steps d-flex">
+      <button class="btn btn-primary progress-btn1">1</button>
+      <hr>
+      <button class="btn btn-primary progress-btn2">2</button>
+      <hr>
+      <button class="btn btn-primary progress-btn3">3</button>
+      <hr class="last-hr">
+    </div>
+
+    <form [formGroup]="form">
+      <div *ngIf="page1" class="register-details">
+
+        <p class="goal-title">
+          About Me
+        </p>
+        <div class="row">
+
+          <div class="col-md-6 form-group">
+            <input type="text" class="form-control" formControlName="name" placeholder="Full Name">
+            <div class="text-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.required">Please
+              enter your name</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 form-group">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email Address">
+            <div class="text-danger" *ngIf="form.controls.email.touched && form.controls.email.errors?.required">
+              Enter valid Email</div>
+          </div>
+
+          <div class="col-md-3 form-group">
+            <input type="text" class="form-control" formControlName="mobile" placeholder="Mobile Number">
+            <div class="text-danger" *ngIf="form.controls.mobile.touched && form.controls.mobile.errors?.required">
+              Enter valid Mobile Number</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 form-group">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            <div class="text-danger" *ngIf="form.controls.password.touched && form.controls.password.errors?.required">
+              Required</div>
+            <div class="text-danger" *ngIf="form.controls.password.touched && form.controls.password.errors?.minlength">
+              Minimum 8 Characters</div>
+          </div>
+
+          <div class="col-md-3 form-group">
+            <input type="password" class="form-control" placeholder="Confirm Password">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 form-group">
+            <input type="text" class="form-control" formControlName="weight" placeholder="Weight">
+            <div class="text-danger" *ngIf="form.controls.weight.touched && form.controls.weight.errors?.required">
+              Please enter your weight
+            </div>
+          </div>
+
+          <div class="col-md-3 form-group">
+            <select class="form-control" formControlName="gender">
+              <option value="">-select-</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Prefer Not to Say</option>
+            </select>
+
+            <div class="text-danger" *ngIf="form.controls.gender.touched && form.controls.gender.errors?.required">
+              Please select your gender
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-primary register-one-btn" [disabled]="form.invalid"
+              (click)="clickNext()">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="page2">
+        <p class="goal-title2">
+          Select your goal
+        </p>
+        <p class="goal-selected">
+          You Selected :{{selectedGoal ? selectedGoal:'No Goal'}}
+        </p>
+        <div class=" row">
+          <div *ngFor="let g of goal">
+            <div class="card-section" (click)="handleGoal(g)">
+              <div class="col-md-3">
+                <div class="card card-small">
+                  <div class="card-header">
+                    {{g?.goal}}
+                  </div>
+                  <div class="card-body card-img">
+                    <img src="../../assets/img/running.jpg" alt="" width="100%" height="100%" />
+                    <div class="card-title-modified">
+                      {{g.target}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row btn-goal">
+          <div class="col-md-3">
+            <button class="btn btn-primary register-two-btn" (click)="goBack()">Back</button>
+          </div>
+
+          <div class="col-md-3">
+            <button class="btn btn-primary register-two-btn" [disabled]="selectedGoal==null"
+              (click)="onSubmit()">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="page3" class="register-details">
+        <p class="goal-title">
+          Congratulations!
+        </p>
+        <div><i class="mdi mdi-run"></i></div>
+        <p class="done-message1">
+          Thank you for taking up the challenge!</p>
+        <p class="done-message2">
+          Hold your adrenaline while we are looking for your fitness partners!!! Keep checking for your fit mates :)
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-primary register-two-btn" (click)="onDone()">Done</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</main>

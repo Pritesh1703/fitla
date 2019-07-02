@@ -1,0 +1,47 @@
+<main>
+  <div class="img-container">
+    <img id="carousel" src="" alt="" width="100%" height="100%" />
+  </div>
+  <div class="login-section">
+    <div class="title-text">
+      <h1 class="animated infinite pulse in delay-2s ">Fitla !</h1>
+    </div>
+
+    <div *ngIf="errstatus==400" class="invalid">Invalid username or password!</div>
+    <div class="login-details">
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <input type="text" class="form-control" formControlName="email" placeholder="Username">
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-primary login-btn" (click)="onLogin()">Login</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 new-user-text">
+            New User?
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-primary register-btn" (click)="onRegister()">Register</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>

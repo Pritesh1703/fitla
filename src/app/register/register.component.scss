@@ -1,0 +1,256 @@
+.img-container{
+    position: relative;
+}
+img{
+  filter: grayscale(1);
+}
+main{
+    position:relative;
+}
+
+.register-section{
+    position:absolute;
+    top:0;
+    z-index:1;
+    width:100%;
+   
+    .register-details{
+        padding: 1em;
+        border-radius: 0.8em;
+        margin-top: 1em;
+        margin-left: 30em;
+
+    }
+}
+
+.form-control{
+    background: transparent;
+    border-radius:1em;
+    columns: #ffffff;
+    border-color:#fff;
+}
+
+::-webkit-input-placeholder {
+    font-size: 0.7em;
+    color:#fff;
+  }
+  
+  ::-moz-placeholder {
+    font-size: 0.7em;
+    color:#fff;
+  }
+  
+  :-ms-input-placeholder {
+    font-size: 0.7em;
+    color:#fff;
+  }
+  
+  ::placeholder {
+    font-size: 0.7em;
+    color:#fff;
+  }
+
+
+  .animated{
+    color: #fff;
+    text-align:center;
+    margin-top: 0.5em;
+    font-weight: 200;
+    font-size: 6em;
+    width: 100%;
+    color: #e91e63;
+    font-family: 'Yellowtail', cursive;
+  }
+
+  .register-one-btn {
+    color: #fff;
+    border-radius:1em;
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 100%;
+
+    &:hover{
+        background-color:#1565c0;
+        border-color:#1565c0;
+    }
+  }
+
+  .register-two-btn {
+    color: #fff;
+    border-radius:1em;
+    margin-top:3em;
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 100%;
+
+    &:hover{
+        background-color:#1565c0;
+        border-color:#1565c0;
+    }
+  }
+
+  .tagline{
+    font-family: 'Raleway Dots', cursive;
+    text-align:center;
+    font-size: 3em;
+    color:#fff;
+  }
+
+  .progress-btn1{
+    border-radius: 50%;
+    margin-left:29em;
+    background-color:#e91e63;
+    border-color:#e91e63;
+  }
+
+  .progress-btn2{
+    border-radius: 50%;
+    margin-left:-16.8em;
+    background-color:#e91e63;
+    border-color:#e91e63;
+  }
+
+  .progress-btn3{
+    border-radius: 50%;
+    margin-left:-17em;
+    background-color:#e91e63;
+    border-color:#e91e63;
+  }
+
+  hr{
+    width: 12em;;
+    border: 2px solid #fff;
+    position: relative;
+    z-index:0; 
+    margin-left:0;
+
+  }
+
+  .last-hr{
+    width: 12em;;
+    border: 0px solid #fff;
+    position: relative;
+    z-index:0; 
+    margin-left:0;
+  }
+
+  select{
+    word-wrap: normal;
+    margin-left: 3em;
+    width: 28em;
+    height: 2em;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 0.8em;
+  }
+
+  .goal-selected{
+    font-family: 'Raleway dots';
+    font-size:1.5em;
+    color:#fff;
+    margin-left:24em;
+  }
+  .goal-title{
+    font-family: 'Raleway dots';
+    font-size:2em;
+    color:#fff;
+    margin-left:3.5em;
+  }
+
+  .goal-title2{
+    font-family: 'Raleway dots';
+    font-size:2em;
+    color:#fff;
+    margin-left:18.5em;
+  }
+
+  .done-message1{
+    font-family: 'Raleway dots';
+    font-size:2em;
+    color:#fff;
+    margin-left:-1.5em;
+  }
+
+  .done-message2{
+    font-family: 'Raleway dots';
+    font-size:1.5em;
+    color:#fff;
+    margin-left: -14em;
+  }
+
+  .done-message3{
+    font-family: 'Raleway dots';
+    font-size:1em;
+    color:#fff;
+  }
+
+.page-2{
+  margin-left:-30em;
+}
+
+.card-img{
+  padding: 0;
+  box-shadow: 0 7px 14px 0 rgba(0, 0, 0, 1), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  &:hover {
+    img {
+      box-shadow: 0 7px 14px 0 rgba(0, 0, 0, 1), 0 0 0 1px rgba(0, 0, 0, 0.08);
+      opacity:0.2;
+      cursor:pointer;
+    }
+    .card-title-modified {
+      color: #e91e63;
+    }
+  }
+}
+
+.card-body {
+  position: relative;
+}
+
+.card-title-modified {
+    position: absolute;
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.card-header{
+  background-color: #e91e63;
+  text-align: center;
+  font-weight: 500;
+  font-size:1em;
+  color:#fff;
+}
+.card-section{
+  margin-right: 2em;
+  margin-left: 5em;
+  margin-top: 3em;
+}
+
+.card-small{
+  width:14em;
+}
+
+.btn-goal{
+  margin-left:30em;
+}
+
+.text-danger{
+  color:#e91e63 !important;
+  font-size: 0.8em;
+}
+
+select{
+  word-wrap: normal;
+  height: 2.5em;
+  margin-left: 0.4em;
+   width: 15.5em;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 0.8em;
+  border-radius: 12em;
+}

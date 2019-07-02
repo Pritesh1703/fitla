@@ -1,0 +1,98 @@
+.img-container{
+    position: relative; 
+}
+.login-section{
+    position:absolute;
+    top:0;
+
+    .login-details{
+        padding: 1em;
+        border-radius: 0.8em;
+        margin-left: 3em;
+    }
+}
+
+.title-text{
+    margin-top: 5em;
+    margin-left: 7em;
+    font-family: Yellowtail;
+    color:#e91e63;
+}
+.animated{
+    color: #fff;
+    text-align:center;
+    margin-top: 0.5em;
+    font-weight: 200;
+    font-size: 6em;
+    width: 100%;
+    color: #e91e63;
+    font-family: 'Yellowtail', cursive;
+  }
+  
+.form-control{
+    background: transparent;
+    border-radius:1em;
+    columns: #ffffff;
+    border-color:#fff;
+}
+
+::-webkit-input-placeholder {
+    font-size: 0.7em;
+    color:#fff;
+  }
+  
+  ::-moz-placeholder {
+    font-size: 0.7em;
+    color:#fff;
+  }
+  
+  :-ms-input-placeholder {
+    font-size: 0.7em;
+    color:#fff;
+  }
+  
+  ::placeholder {
+    font-size: 0.7em;
+    color:#fff;
+  }
+
+  .login-btn{
+    color: #fff;
+    border-radius:1em;
+    margin-top:1em;
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 100%;
+  
+    &:hover{
+        background-color:#1565c0;
+        border-color:#1565c0;
+    }
+  }
+ .new-user-text{
+    font-size: 0.8em;
+    margin-left: 5em;
+    margin-top: 1em;
+    color:#fff;
+ }
+
+ .register-btn{
+    color: #fff;
+    border-radius:1em;
+    margin-top:1em;
+    background-color:orange;
+    border-color: orange;
+    width: 100%;
+  
+    &:hover{
+        background-color:orangered;
+        border-color:orangered;
+    }
+ }
+
+ .invalid{
+    font-size: 0.8em;
+    margin-left: 5em;
+    margin-top: 1em;
+    color:#fff;
+ }
