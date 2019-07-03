@@ -28,6 +28,7 @@ main{
     border-radius:1em;
     columns: #ffffff;
     border-color:#fff;
+    color: #fff;
 }
 
 ::-webkit-input-placeholder {
@@ -158,6 +159,13 @@ main{
     margin-left:3.5em;
   }
 
+  .goal-err-title{
+    font-family: 'Raleway dots';
+    font-size:2em;
+    color:#fff;
+    
+  }
+
   .goal-title2{
     font-family: 'Raleway dots';
     font-size:2em;
@@ -226,8 +234,8 @@ main{
   color:#fff;
 }
 .card-section{
-  margin-right: 2em;
-  margin-left: 5em;
+  // margin-right: 2em;
+  // margin-left: 5em;
   margin-top: 3em;
 }
 
@@ -253,4 +261,12 @@ select{
   color: #fff;
   font-size: 0.8em;
   border-radius: 12em;
+}
+.col-md-3 {
+  justify-content: center;
+  display: flex;
+}
+
+.card-position{
+  margin-top:-3.5em;
 }

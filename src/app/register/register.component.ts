@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators, FormArray } from '@angular/forms';
 import { RegisterService } from './register.service';
 
 @Component({
@@ -10,6 +10,8 @@ import { RegisterService } from './register.service';
 })
 export class RegisterComponent implements OnInit {
   selectedGoal: any;
+  errRegister: any;
+  passwordMatch: boolean;
   goal = [
     { goal: 'Run', target: '100 km' },
     { goal: 'Workout', target: '900 minutes' },
@@ -21,33 +23,43 @@ export class RegisterComponent implements OnInit {
   public page1 = true;
   public page2 = false;
   public page3 = false;
+
   constructor(private router: Router, private fb: FormBuilder, private registerSvc: RegisterService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
-      mobile: ['', Validators.required],
-      password: ['', Validators.required, Validators.minLength(8)],
-      weight: ['', Validators.required],
+      mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      confirmpassword: ['', Validators.required],
+      weight: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       gender: ['', Validators.required],
-      goal: ['', Validators.required]
+      goal: ['']
     });
   }
 
   public onRegister() {
-    this.registerSvc.getregistrationDetails(this.form.value).subscribe((data) => {
+    const request = { ...this.form.value };
+    delete request.confirmpassword;
+    this.registerSvc.getregistrationDetails(request).subscribe((data) => {
       console.log('saved successfully', data);
     }, (err) => {
+      this.errRegister = err.error;
+      console.log('@@@@@', this.errRegister);
       console.log('Error saving the form', err);
     });
   }
 
   public clickNext() {
-    this.page1 = false;
-    this.page2 = true;
-    console.log('*****', this.form.value);
-
+    if (this.form.value.password !== this.form.value.confirmpassword) {
+      this.passwordMatch = true;
+    } else {
+      this.passwordMatch = false;
+      this.page1 = false;
+      this.page2 = true;
+      console.log('*****', this.form.value);
+    }
   }
 
   public goBack() {

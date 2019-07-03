@@ -45,7 +45,17 @@
           <div class="col-md-3 form-group">
             <input type="text" class="form-control" formControlName="mobile" placeholder="Mobile Number">
             <div class="text-danger" *ngIf="form.controls.mobile.touched && form.controls.mobile.errors?.required">
-              Enter valid Mobile Number</div>
+              Enter valid Mobile Number
+            </div>
+            <div class="text-danger" *ngIf="form.controls.mobile.touched && form.controls.mobile.errors?.pattern">
+              Mobile num should be numeric
+            </div>
+            <div class="text-danger" *ngIf="form.controls.mobile.touched && form.controls.mobile.errors?.minlength">
+              Mobile number should be 0f 10 digits
+            </div>
+            <div class="text-danger" *ngIf="form.controls.mobile.touched && form.controls.mobile.errors?.maxlength">
+              Mobile number should be 0f 10 digits
+            </div>
           </div>
         </div>
 
@@ -59,7 +69,10 @@
           </div>
 
           <div class="col-md-3 form-group">
-            <input type="password" class="form-control" placeholder="Confirm Password">
+            <input type="password" class="form-control" formControlName="confirmpassword"
+              placeholder="Confirm Password">
+            <div class="text-danger" *ngIf="form.controls.password.touched && passwordMatch">
+              Password mismatch</div>
           </div>
         </div>
 
@@ -68,6 +81,9 @@
             <input type="text" class="form-control" formControlName="weight" placeholder="Weight">
             <div class="text-danger" *ngIf="form.controls.weight.touched && form.controls.weight.errors?.required">
               Please enter your weight
+            </div>
+            <div class="text-danger" *ngIf="form.controls.weight.touched && form.controls.weight.errors?.pattern">
+              Weight should be numeric
             </div>
           </div>
 
@@ -101,18 +117,16 @@
           You Selected :{{selectedGoal ? selectedGoal:'No Goal'}}
         </p>
         <div class=" row">
-          <div *ngFor="let g of goal">
+          <div *ngFor="let g of goal" class="col-md-3 card-position">
             <div class="card-section" (click)="handleGoal(g)">
-              <div class="col-md-3">
-                <div class="card card-small">
-                  <div class="card-header">
-                    {{g?.goal}}
-                  </div>
-                  <div class="card-body card-img">
-                    <img src="../../assets/img/running.jpg" alt="" width="100%" height="100%" />
-                    <div class="card-title-modified">
-                      {{g.target}}
-                    </div>
+              <div class="card card-small">
+                <div class="card-header">
+                  {{g?.goal}}
+                </div>
+                <div class="card-body card-img">
+                  <img src="../../assets/img/running.jpg" alt="" width="100%" height="100%" />
+                  <div class="card-title-modified">
+                    {{g.target}}
                   </div>
                 </div>
               </div>
@@ -132,15 +146,25 @@
         </div>
       </div>
 
-      <div *ngIf="page3" class="register-details">
+      <div *ngIf="page3 && !errRegister" class="register-details">
         <p class="goal-title">
           Congratulations!
         </p>
-        <div><i class="mdi mdi-run"></i></div>
         <p class="done-message1">
           Thank you for taking up the challenge!</p>
         <p class="done-message2">
           Hold your adrenaline while we are looking for your fitness partners!!! Keep checking for your fit mates :)
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-primary register-two-btn" (click)="onDone()">Done</button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="page3 && errRegister" class="register-details">
+        <p class="goal-err-title">
+          Sorry! {{errRegister}}
         </p>
         <div class="row">
           <div class="col-md-6">

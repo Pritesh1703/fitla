@@ -6,4 +6,3 @@ applications:
     instances: 1
     buildpack: staticfile_buildpack
     path: dist/fitlah
-    
