@@ -12,15 +12,15 @@
 
     <div class="tagline">Celebrating Health</div>
     <div class="form-steps d-flex">
-      <button class="btn btn-primary progress-btn1">1</button>
+      <button class="btn btn-primary progress-btn">1</button>
       <hr>
-      <button class="btn btn-primary progress-btn2">2</button>
+      <button class="btn btn-primary progress-btn">2</button>
       <hr>
-      <button class="btn btn-primary progress-btn3">3</button>
+      <button class="btn btn-primary progress-btn">3</button>
       <hr class="last-hr">
     </div>
 
-    <form [formGroup]="form">
+    <form [formGroup]="form" class="d-flex">
       <div *ngIf="page1" class="register-details">
 
         <p class="goal-title">
@@ -28,7 +28,7 @@
         </p>
         <div class="row">
 
-          <div class="col-md-6 form-group">
+          <div class="col-md-12 form-group">
             <input type="text" class="form-control" formControlName="name" placeholder="Full Name">
             <div class="text-danger" *ngIf="form.controls.name.touched && form.controls.name.errors?.required">Please
               enter your name</div>
@@ -36,13 +36,13 @@
         </div>
 
         <div class="row">
-          <div class="col-md-3 form-group">
+          <div class="col-md-6 form-group">
             <input type="text" class="form-control" formControlName="email" placeholder="Email Address">
             <div class="text-danger" *ngIf="form.controls.email.touched && form.controls.email.errors?.required">
               Enter valid Email</div>
           </div>
 
-          <div class="col-md-3 form-group">
+          <div class="col-md-6 form-group">
             <input type="text" class="form-control" formControlName="mobile" placeholder="Mobile Number">
             <div class="text-danger" *ngIf="form.controls.mobile.touched && form.controls.mobile.errors?.required">
               Enter valid Mobile Number
@@ -60,7 +60,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-3 form-group">
+          <div class="col-md-6 form-group">
             <input type="password" class="form-control" formControlName="password" placeholder="Password">
             <div class="text-danger" *ngIf="form.controls.password.touched && form.controls.password.errors?.required">
               Required</div>
@@ -68,7 +68,7 @@
               Minimum 8 Characters</div>
           </div>
 
-          <div class="col-md-3 form-group">
+          <div class="col-md-6 form-group">
             <input type="password" class="form-control" formControlName="confirmpassword"
               placeholder="Confirm Password">
             <div class="text-danger" *ngIf="form.controls.password.touched && passwordMatch">
@@ -77,7 +77,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-3 form-group">
+          <div class="col-md-6 form-group">
             <input type="text" class="form-control" formControlName="weight" placeholder="Weight">
             <div class="text-danger" *ngIf="form.controls.weight.touched && form.controls.weight.errors?.required">
               Please enter your weight
@@ -87,7 +87,7 @@
             </div>
           </div>
 
-          <div class="col-md-3 form-group">
+          <div class="col-md-6 form-group">
             <select class="form-control" formControlName="gender">
               <option value="">-select-</option>
               <option>Male</option>
@@ -102,14 +102,14 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <button class="btn btn-primary register-one-btn" [disabled]="form.invalid"
               (click)="clickNext()">Next</button>
           </div>
         </div>
       </div>
 
-      <div *ngIf="page2">
+      <div *ngIf="page2" class="goals">
         <p class="goal-title2">
           Select your goal
         </p>
@@ -155,22 +155,18 @@
         <p class="done-message2">
           Hold your adrenaline while we are looking for your fitness partners!!! Keep checking for your fit mates :)
         </p>
-        <div class="row">
-          <div class="col-md-6">
-            <button class="btn btn-primary register-two-btn" (click)="onDone()">Done</button>
-          </div>
-        </div>
+
+        <button class="btn btn-primary register-two-btn" (click)="onDone()">Done</button>
+
       </div>
 
       <div *ngIf="page3 && errRegister" class="register-details">
         <p class="goal-err-title">
           Sorry! {{errRegister}}
         </p>
-        <div class="row">
-          <div class="col-md-6">
-            <button class="btn btn-primary register-two-btn" (click)="onDone()">Done</button>
-          </div>
-        </div>
+
+        <button class="btn btn-primary register-two-btn" (click)="onDone()">Done</button>
+
       </div>
     </form>
 
