@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../users.service';
 import { Router } from '@angular/router';
+import { ExcelService } from '../excel.service';
 
 @Component({
   selector: 'app-admin',
@@ -11,7 +12,7 @@ export class AdminComponent implements OnInit {
 
   allUsers: any;
   totalUsers: number;
-  constructor(private userSvc: UserService, private router: Router) { }
+  constructor(private userSvc: UserService, private router: Router, private excelService: ExcelService) { }
 
   ngOnInit() {
     this.allUsers = this.userSvc.allUsers.subscribe((data) => {
@@ -26,6 +27,20 @@ export class AdminComponent implements OnInit {
   public onLogout() {
     this.allUsers = null;
     this.router.navigate(['/login']);
+  }
+
+  public exportAsXLSX(): void {
+    const exportedUsers = this.allUsers.map(user => {
+      return {
+        name: user.name,
+        email: user.email,
+        mobile: user.mobile,
+        gender: user.gender,
+        weight: user.weight,
+        goal: user.goal
+      };
+    });
+    this.excelService.exportAsExcelFile(exportedUsers, 'users');
   }
 
 }

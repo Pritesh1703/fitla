@@ -6,11 +6,15 @@
     <b> Note:Please click on Logout and Login as Admin again if you are unable to see the data.</b>
   </div>
   <div class="card">
-    <div class="card-header text-white bg-info">
+    <div class="card-header text-white bg-info d-flex">
       Registered Users
-      <button type="button" class="btn btn-warning count-btn">
-        Total Registration <span class="badge badge-light">{{totalUsers}}</span>
-      </button>
+      <div class="reg-headeer-btn">
+        <button type="button" class="btn btn-warning count-btn">
+          Total Registration <span class="badge badge-light">{{totalUsers}}</span>
+        </button>
+        <button (click)="exportAsXLSX()" class="btn btn-primary count-btn">Export Excel</button>
+      </div>
+
     </div>
     <div class="card-body">
       <table class="table table-striped">

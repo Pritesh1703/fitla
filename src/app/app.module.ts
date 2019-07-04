@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { UserService } from './users.service';
+import { ExcelService } from './excel.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { UserService } from './users.service';
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule
   ],
-  providers: [UserService],
+  providers: [UserService, ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
