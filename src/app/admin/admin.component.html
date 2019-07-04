@@ -1,5 +1,38 @@
 <main>
-  <div btn-section>
+  <div class="btn-section">
     <button class="btn btn-primary logout-btn" (click)="onLogout()">Logout</button>
+  </div>
+  <div class="note">
+    <b> Note:Please click on Logout and Login as Admin again if you are unable to see the data.</b>
+  </div>
+  <div class="card">
+    <div class="card-header text-white bg-info">
+      Registered Users
+      <button type="button" class="btn btn-warning count-btn">
+        Total Registration <span class="badge badge-light">{{totalUsers}}</span>
+      </button>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Weight</th>
+          <th>Gender</th>
+          <th>Goal</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of allUsers; index as i">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td>{{user.weight}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.goal}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </main>

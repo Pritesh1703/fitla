@@ -73,14 +73,12 @@
  .new-user-text{
     font-size: 0.8em;
     margin-left: 5em;
-    margin-top: 1em;
     color:#fff;
  }
 
  .register-btn{
     color: #fff;
     border-radius:1em;
-    margin-top:1em;
     background-color:orange;
     border-color: orange;
     width: 100%;
@@ -96,4 +94,18 @@
     margin-left: 5em;
     margin-top: 1em;
     color:#fff;
+ }
+
+ .admin-btn{
+   padding:0.6em;
+   font-size: 1em;
+   background-color: transparent;
+   border-color:transparent;
+   color:#fff;
+   cursor: pointer;
+   margin-left:-2em;
+   &:hover{
+     color:#e91e63;
+   }
+
  }

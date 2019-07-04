@@ -9,7 +9,8 @@
 
     <div *ngIf="errstatus==400" class="invalid">Invalid username or password!</div>
     <div class="login-details">
-      <form [formGroup]="form">
+      <form [formGroup]="form" *ngIf="!adminLogin">
+
         <div class="row">
           <div class="col-md-12 form-group">
             <input type="text" class="form-control" formControlName="email" placeholder="Username">
@@ -31,7 +32,7 @@
 
         <div class="row">
           <div class="col-md-12 new-user-text">
-            New User?
+            <button class="btn btn-primary admin-btn" (click)="admin()">Admin Login.</button>New User?
           </div>
         </div>
 
@@ -40,7 +41,21 @@
             <button class="btn btn-primary register-btn" (click)="onRegister()">Register</button>
           </div>
         </div>
+      </form>
 
+
+      <form [formGroup]="adminform" *ngIf="adminLogin">
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <input type="text" class="form-control" formControlName="passcode" placeholder="Passcode">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-primary login-btn" (click)="onAdminLogin()">Admin Login</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { LoginService } from './login.service';
+import { UserService } from '../users.service';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   form: any;
+  adminform: any;
   errstatus: any;
   images = [
     '../../assets/img/image1.jpg',
@@ -18,8 +20,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   ];
   currentIndex = 0;
   timer;
+  adminLogin: boolean;
 
-  constructor(private router: Router, private fb: FormBuilder, private loginSvc: LoginService) {
+  constructor(private router: Router, private fb: FormBuilder, private loginSvc: LoginService, private userSvc: UserService) {
     this.loginSvc.isLoggedIn().subscribe(login => {
       if (login) {
         this.router.navigate(['/profile']);
@@ -38,6 +41,10 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.form = this.fb.group({
       email: [],
       password: []
+    });
+
+    this.adminform = this.fb.group({
+      passcode: []
     });
   }
 
@@ -68,6 +75,21 @@ export class LoginComponent implements OnInit, OnDestroy {
         console.log(err);
 
       });
+  }
+
+  public admin() {
+    this.adminLogin = true;
+  }
+
+  public onAdminLogin() {
+    this.userSvc.getAlluser(this.adminform.value.passcode).subscribe((response) => {
+      console.log(response);
+      this.router.navigate(['/admin']);
+
+    }, (err) => {
+      console.log(err);
+    });
+
   }
 
   ngOnDestroy() {

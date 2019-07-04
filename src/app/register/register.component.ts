@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
     this.registerSvc.getregistrationDetails(request).subscribe((data) => {
       console.log('saved successfully', data);
     }, (err) => {
-      this.errRegister = err.error;
+      this.errRegister = err.error.error;
       console.log('@@@@@', this.errRegister);
       console.log('Error saving the form', err);
     });

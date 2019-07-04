@@ -9,6 +9,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
+import { UserService } from './users.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { AdminComponent } from './admin/admin.component';
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

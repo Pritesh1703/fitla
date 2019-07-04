@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { Route, RouterModule } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -12,6 +13,7 @@ const ROUTER: Route[] = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'profile', component: UserProfileComponent },
+    { path: 'admin', component: AdminComponent },
     { path: '**', redirectTo: 'login', pathMatch: 'full' }
 
 ];
