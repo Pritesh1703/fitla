@@ -10,8 +10,8 @@ import { RegisterService } from './register.service';
 })
 export class RegisterComponent implements OnInit {
   selectedGoal: any;
-  errRegister: any;
-  errServer: any;
+  errRegister = false;
+  errMessage = false;
   passwordMatch: boolean;
   goal = [
     { goal: 'Run', target: '100 km' },
@@ -48,7 +48,8 @@ export class RegisterComponent implements OnInit {
     this.registerSvc.getregistrationDetails(request).subscribe((data) => {
       console.log('saved successfully', data);
     }, (err) => {
-      this.errRegister = err.error.error;
+      this.errRegister = true;
+      this.errMessage = err.error.error;
       console.log('Error saving the form', err);
     });
   }

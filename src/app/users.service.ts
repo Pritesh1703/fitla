@@ -10,7 +10,6 @@ export class UserService {
     allUsers: any;
     constructor(private http: HttpClient) { }
     public getAlluser(passcode): Observable<any> {
-        console.log(JSON.stringify({ 'passcode': passcode }));
         const headers: HttpHeaders = new HttpHeaders()
             .set('content-type', 'application/json');
         this.allUsers = this.http.post('https://dbs-wellness-api.sit.apps.cs.sgp.dbs.com/api/users/all',
