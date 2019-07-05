@@ -65,14 +65,19 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onLogin() {
     this.loginSvc.login(this.form.value).subscribe((response) => {
+      if (response.status && response.status === 'failed') {
+        this.errstatus = response.status;
+      } else {
+        this.loginSvc.saveToken(response.token);
+        this.router.navigate(['/profile']);
+        console.log(response);
+      }
 
-      this.loginSvc.saveToken(response.token);
-      this.router.navigate(['/profile']);
-      console.log(response);
     },
       (err) => {
-        this.errstatus = err.status;
+
         console.log(err);
+
 
       });
   }

@@ -7,7 +7,7 @@
       <h1 class="animated infinite pulse in delay-2s ">Fitla !</h1>
     </div>
 
-    <div *ngIf="errstatus==400" class="invalid">Invalid username or password!</div>
+    <div *ngIf="errstatus" class="invalid">Invalid username or password!</div>
     <div class="login-details">
       <form [formGroup]="form" *ngIf="!adminLogin">
 

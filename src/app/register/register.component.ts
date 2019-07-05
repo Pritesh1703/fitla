@@ -61,7 +61,6 @@ export class RegisterComponent implements OnInit {
       this.passwordMatch = false;
       this.page1 = false;
       this.page2 = true;
-      console.log('*****', this.form.value);
     }
   }
 
@@ -84,7 +83,6 @@ export class RegisterComponent implements OnInit {
   public handleGoal(goals) {
     this.form.controls['goal'].setValue(goals.goal + ' ' + goals.target);
     this.selectedGoal = goals.goal + ' ' + goals.target;
-    console.log(this.form.value);
   }
 
 }
