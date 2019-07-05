@@ -36,7 +36,9 @@ export class RegisterComponent implements OnInit {
       confirmpassword: ['', Validators.required],
       weight: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       gender: ['', Validators.required],
-      goal: ['']
+      question: ['', Validators.required],
+      answer: ['', Validators.required],
+      goal: [''],
     });
   }
 

@@ -103,6 +103,30 @@
           </div>
         </div>
 
+
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <select class="form-control" formControlName="question">
+              <option value="">-select-</option>
+              <option value="1">What primary school did you attend?</option>
+              <option value="2">What were the last four digits of your childhood telephone number?</option>
+              <option value="3">What are the last five digits of your driver's licence number?</option>
+              <option value="4">In what town or city did your mother and father meet?</option>
+            </select>
+
+            <div class="text-danger" *ngIf="form.controls.question.touched && form.controls.question.errors?.required">
+              Please select a security question
+            </div>
+          </div>
+
+          <div class="col-md-6 form-group">
+            <input type="text" class="form-control" formControlName="answer" placeholder="Answer security question">
+            <div class="text-danger" *ngIf="form.controls.answer.touched && form.controls.answer.errors?.required">
+              Please answer the security question selected
+            </div>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-md-12">
             <button class="btn btn-primary register-one-btn" [disabled]="form.invalid"
