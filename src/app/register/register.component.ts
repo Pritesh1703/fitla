@@ -11,6 +11,7 @@ import { RegisterService } from './register.service';
 export class RegisterComponent implements OnInit {
   selectedGoal: any;
   errRegister: any;
+  errServer: any;
   passwordMatch: boolean;
   goal = [
     { goal: 'Run', target: '100 km' },
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(dbs)\.com$/g)]],
       mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmpassword: ['', Validators.required],
@@ -46,7 +47,6 @@ export class RegisterComponent implements OnInit {
       console.log('saved successfully', data);
     }, (err) => {
       this.errRegister = err.error.error;
-      console.log('@@@@@', this.errRegister);
       console.log('Error saving the form', err);
     });
   }

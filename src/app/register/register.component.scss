@@ -30,7 +30,7 @@ main{
     border-radius:1em;
     columns: #ffffff;
     border-color:#fff;
-    color: #fff;
+     color: #fff;
 }
 
 ::-webkit-input-placeholder {
@@ -284,6 +284,10 @@ select{
   font-size: 0.8em;
   border-radius: 12em;
 }
+
+option:not(checked) {  
+  background-color: white; color:#000;
+ }
 .col-md-3 {
   justify-content: center;
   display: flex;

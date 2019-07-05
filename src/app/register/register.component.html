@@ -40,6 +40,8 @@
             <input type="text" class="form-control" formControlName="email" placeholder="Email Address">
             <div class="text-danger" *ngIf="form.controls.email.touched && form.controls.email.errors?.required">
               Enter valid Email</div>
+            <div class="text-danger" *ngIf="form.controls.email.touched && form.controls.email.errors?.pattern">
+              Register only with DBS Email Id</div>
           </div>
 
           <div class="col-md-6 form-group">
@@ -164,10 +166,9 @@
         <p class="goal-err-title">
           Sorry! {{errRegister}}
         </p>
-
         <button class="btn btn-primary register-two-btn" (click)="onDone()">Done</button>
-
       </div>
+
     </form>
 
   </div>
