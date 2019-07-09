@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   passwordMatch: boolean;
   goal = [
     { goal: 'Run', target: '100 km' },
-    { goal: 'Workout', target: '900 minutes' },
+    { goal: 'Workout', target: '1000 minutes' },
     { goal: 'Lose', target: '4 Kgs' },
     { goal: 'Burn', target: '10000 Cal' }
   ];
