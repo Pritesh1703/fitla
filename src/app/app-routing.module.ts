@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { Route, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 
 
@@ -14,6 +15,7 @@ const ROUTER: Route[] = [
     { path: 'register', component: RegisterComponent },
     { path: 'profile', component: UserProfileComponent },
     { path: 'admin', component: AdminComponent },
+    { path: 'privacy', component: PrivacyComponent },
     { path: '**', redirectTo: 'login', pathMatch: 'full' }
 
 ];

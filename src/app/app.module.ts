@@ -11,10 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { UserService } from './users.service';
 import { ExcelService } from './excel.service';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, RegisterComponent, UserProfileComponent, AdminComponent
+    AppComponent, LoginComponent, RegisterComponent, UserProfileComponent, AdminComponent, PrivacyComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule

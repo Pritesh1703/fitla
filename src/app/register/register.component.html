@@ -36,15 +36,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6 form-group">
-            <input type="text" class="form-control" formControlName="email" placeholder="Email Address">
-            <div class="text-danger" *ngIf="form.controls.email.touched && form.controls.email.errors?.required">
-              Enter valid Email</div>
-            <div class="text-danger" *ngIf="form.controls.email.touched && form.controls.email.errors?.pattern">
-              Register only with DBS Email Id</div>
-          </div>
-
-          <div class="col-md-6 form-group">
+          <div class="col-md-12 form-group">
             <input type="text" class="form-control" formControlName="mobile" placeholder="Mobile Number">
             <div class="text-danger" *ngIf="form.controls.mobile.touched && form.controls.mobile.errors?.required">
               Enter valid Mobile Number

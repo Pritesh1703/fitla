@@ -33,7 +33,6 @@ export class AdminComponent implements OnInit {
     const exportedUsers = this.allUsers.map(user => {
       return {
         name: user.name,
-        email: user.email,
         mobile: user.mobile,
         gender: user.gender,
         weight: user.weight,

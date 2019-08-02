@@ -1,8 +1,0 @@
-applications:
-  - name: dbs_wellness_fitla
-    routes:
-      - route: dps-wellness-ui.dev.apps.cs.sgp.dbs.com/
-    memory: 1GB
-    instances: 1
-    buildpack: staticfile_buildpack
-    path: dist/fitlah

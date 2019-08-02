@@ -12,9 +12,9 @@ export class UserService {
     public getAlluser(passcode): Observable<any> {
         const headers: HttpHeaders = new HttpHeaders()
             .set('content-type', 'application/json');
-        this.allUsers = this.http.post('https://dbs-wellness-api-prod.dev.apps.cs.sgp.dbs.com/api/users/all',
+        this.allUsers = this.http.post('https://fierce-inlet-58861.herokuapp.com/api/users/all',
             JSON.stringify({ 'passcode': passcode }), { headers });
-        return this.http.post('https://dbs-wellness-api-prod.dev.apps.cs.sgp.dbs.com/api/users/all',
+        return this.http.post('https://fierce-inlet-58861.herokuapp.com/api/users/all',
             JSON.stringify({ 'passcode': passcode }), { headers });
     }
 

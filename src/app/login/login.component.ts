@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     }, 3000);
 
     this.form = this.fb.group({
-      email: [],
+      mobile: [],
       password: []
     });
 

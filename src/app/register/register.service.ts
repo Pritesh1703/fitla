@@ -10,7 +10,7 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   public getregistrationDetails(registrationData): Observable<any> {
-    return this.http.post('https://dbs-wellness-api-prod.dev.apps.cs.sgp.dbs.com/api/users', registrationData);
+    return this.http.post('https://fierce-inlet-58861.herokuapp.com/api/users', registrationData);
   }
 }
 

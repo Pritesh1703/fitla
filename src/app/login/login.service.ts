@@ -11,13 +11,13 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   public login(user): Observable<any> {
-    return this.http.post('https://dbs-wellness-api-prod.dev.apps.cs.sgp.dbs.com/api/auth', user);
+    return this.http.post('https://fierce-inlet-58861.herokuapp.com/api/auth', user);
   }
 
   public getAlluser(passcode): Observable<any> {
     const headers: HttpHeaders = new HttpHeaders()
       .set('content-type', 'application/json');
-    return this.http.post('https://dbs-wellness-api-prod.dev.apps.cs.sgp.dbs.com/api/users/all',
+    return this.http.post('https://fierce-inlet-58861.herokuapp.com/api/users/all',
       JSON.stringify({ 'passcode': passcode }), { headers });
   }
 
@@ -29,8 +29,8 @@ export class LoginService {
     const headers = new HttpHeaders({
       'x-auth-token': localStorage.getItem('token')
     });
-    console.log(this.http.get('https://dbs-wellness-api-prod.dev.apps.cs.sgp.dbs.com/api/users/isLogin', { headers: headers }));
-    return this.http.get('https://dbs-wellness-api-prod.dev.apps.cs.sgp.dbs.com/api/users/isLogin', { headers: headers });
+    console.log(this.http.get('https://fierce-inlet-58861.herokuapp.com/api/users/isLogin', { headers: headers }));
+    return this.http.get('https://fierce-inlet-58861.herokuapp.com/api/users/isLogin', { headers: headers });
 
   }
 
